@@ -39,9 +39,17 @@ h3 {
 }
 h4 {
     font-size: 24px;
+    padding: 12px;
+
 }
 h5{
     font-size: 20px;
+    padding: 12px;
+
+}
+img{
+    padding: 12px;
+
 }
 
 container {
@@ -168,4 +176,17 @@ p {
     .div4 { grid-area: 2 / 2 / 3 / 3; }
     .descr {
         font-size: 12px;
+    }
+    .skill {
+        margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+    gap: 15px;
+    width: 435px;
+    height: fit-content;
+    background-color: #1F1F1F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
     }
