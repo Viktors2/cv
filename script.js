@@ -19,21 +19,25 @@ arrow.addEventListener("click", function () {
 
 ///popup
 let modalContent = document.querySelector(".popup-content");
-let openModal = document.querySelector(".button-f");
-let closeModal = document.querySelector(".close-popup");
+    let openModal = document.querySelector(".button-f");
+    let closeModal = document.querySelector(".close-popup");
 
-let closeModalFunction = function () {
-  modalContent.classList.add("hidden-popup");
-}
+    let closeModalFunction = function () {
+      modalContent.style.opacity = 0;
+      setTimeout(function() {
+        modalContent.classList.add("hidden-popup");
+      }, 300); // Wait for the transition to complete before hiding the popup
+    }
 
-openModal.addEventListener("click", function () {
-  modalContent.classList.remove("hidden-popup");
-});
+    openModal.addEventListener("click", function () {
+      modalContent.style.opacity = 1;
+      modalContent.classList.remove("hidden-popup");
+    });
 
-closeModal.addEventListener("click", closeModalFunction);
+    closeModal.addEventListener("click", closeModalFunction);
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape" && !modalContent.classList.contains("hidden-popup")) {
-    closeModalFunction();
-  }
-});
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !modalContent.classList.contains("hidden-popup")) {
+        closeModalFunction();
+      }
+    });
