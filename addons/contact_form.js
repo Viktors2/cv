@@ -1,10 +1,14 @@
+import { apiKey, apiDomain } from './keys.js';
+
+
 const form = document.querySelector('.c-form'),
         nameInput = document.querySelector('.c-name'),
         emailInput = document.querySelector('.c-email'),
         phoneInput = document.querySelector('.c-phone'),
         messageInput = document.querySelector('.text'),
         sendButton = document.querySelector('.send-email');
-
+  
+  
 sendButton.addEventListener('click', sendEmail);
 
 // To send the email
@@ -26,10 +30,10 @@ function sendEmail(event) {
   };
 
   // Mailgun API
-  fetch('DOMAINNAME', {
+  fetch(apiDomain, {
     method: 'POST',
     headers: {
-      'Authorization': 'Basic ' + btoa('api:API_KEY'),
+      'Authorization': `Basic ${btoa(`api:${apiKey}`)}`,
     },
     body: new URLSearchParams(data)
   })
