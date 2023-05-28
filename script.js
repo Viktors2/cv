@@ -16,3 +16,24 @@ navLinks.forEach((link, index) => {
 arrow.addEventListener("click", function () {
   elements[1].scrollIntoView({ behavior: "smooth" });
 });
+
+///popup
+let modalContent = document.querySelector(".popup-content");
+let openModal = document.querySelector(".button-f");
+let closeModal = document.querySelector(".close-popup");
+
+let closeModalFunction = function () {
+  modalContent.classList.add("hidden-popup");
+}
+
+openModal.addEventListener("click", function () {
+  modalContent.classList.remove("hidden-popup");
+});
+
+closeModal.addEventListener("click", closeModalFunction);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && !modalContent.classList.contains("hidden-popup")) {
+    closeModalFunction();
+  }
+});
