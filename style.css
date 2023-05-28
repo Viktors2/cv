@@ -96,14 +96,14 @@ img{
 
 }
 :root {
-    --container-height: calc(100vh + 100px);
+    --con-height: calc(100vh + 100px);
   }
 
-container {
+.con {
     min-width: 700px;
     text-align: center; 
     width : 100vw;
-    height: var(--container-height);
+    height: var(--con-height);
 }
 
 .main {
@@ -115,7 +115,7 @@ container {
     justify-content: center;
 
 }
-container .arrow {
+.con .arrow {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -131,17 +131,7 @@ container .arrow {
 justify-content: center;
 padding: 12px;
 }
-.container2 {
-    min-width: 700px;
-    text-align: center;
-    width: 100vw; 
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 120px, 0px, 120px, 0px;
-  }
+
   
   .header {
     padding-top: 120px;
