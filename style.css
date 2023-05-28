@@ -196,6 +196,7 @@ p {
     grid-row-gap: 0px;
     }
     .p-button {
+    width: fit-content;
     background-color: #E65F78;
     border-radius: 5px;
     padding: 10px;
