@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h2>Tic tac toe game</h2>
+      <div class="game_board">
+        <div class="cell" data-id="0"></div>
+        <div class="cell" data-id="1"></div>
+        <div class="cell" data-id="2"></div>
+        <div class="cell" data-id="3"></div>
+        <div class="cell" data-id="4"></div>
+        <div class="cell" data-id="5"></div>
+        <div class="cell" data-id="6"></div>
+        <div class="cell" data-id="7"></div>
+        <div class="cell" data-id="8"></div>
+      </div>
+
+      <button class="reset">Reset</button>
+      <div class="center">
+        <h2>Winner history:</h2>
+        <div class="history"><span class="winner_list"> </span></div>
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="text_card">
+        <h3 class="message"></h3>
+        <button class="reset_game">Reset</button>
+      </div>
+    </div>
+    <!-- 
+    1. ✅ Ievietot "x" pie klikšķa uz šūnas
+      A. ✅ Pirmajai šunai pārtver klikšķa notikumu.
+      B. ✅ Pārtvert klikšķi -> pārbaudīt
+      C. ✅ Ievietot šūnā saturu "x"
+    2. ✅ Pie atkārtotiem klikškiem ievietot nākošo vērtību "o" vai "x";
+    3. ✅ Neļaut ievietot vērtību šunās kuras ir jau aizņemtas;
+    4. ✅ Uzpiežot uz pogas ar klasi "reset" laukumā ierakstītām vērtībām ir jāizdzēšās un
+    nākošajam gājienam pēc reset darbības ir jābūt atkal spēlētājam ar "x" simbolu
+      A: ✅ pārtvert klikški uz reset pogas
+      B: ✅ nodzēst šunu teksta saturu
+      C: ✅ attiestadīt symbol mainīgo uz noklusēto vērtību;
+    5. ✅ izveidot validācijas (uzvarētāja noteikšanas) funckciju un izsaukt to īstajā brīdī
+    6. ✅ Izdomāt uzvarētāja noteikšanas loģiku
+    7. ✅ Realizēt uzvarētāja noteikšanas loģiku kodā.
+    8. ✅ Paziņot par uzvarētāju izmantojot sagatavoto elementu ar klasi "popup"
+
+    9. Spēles gaitu saglabāt lokālajā atmiņā
+    10. Pārlādējot lapu, ļaut turpināt spēli no tās pašas vietas
+    (visi iepriekšējie gājieni ir vajadzīgajās šūnās)
+   -->
+    <script src="ApiManager.js"></script>
+    <script src="Referee.js"></script>
+    <script src="Storage.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

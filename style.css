@@ -195,6 +195,15 @@ p {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
+    .p-button {
+    background-color: #E65F78;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 12px;
+    color: #ffffff;
+    font-size: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
     
     .exp { 
     display: flex;

@@ -1,0 +1,64 @@
+[
+    {
+        "name": "Una",
+        "email": "una.ozolina@bezkomisijas.lv",
+        "purchase_history": [
+            {
+                "product": "Dators",
+                "quantity": 1
+            },
+            {
+                "product": "Pele",
+                "quantity": 2
+            },
+            {
+                "product": "Tastatūra",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "name": "Māris",
+        "email": "maris@bezkomisijas.lv",
+        "purchase_history": [
+            {
+                "product": "Dators",
+                "quantity": 1
+            },
+            {
+                "product": "Pele",
+                "quantity": 1
+            },
+            {
+                "product": "Austiņas",
+                "quantity": 1
+            },
+            {
+                "product": "Tastatūra",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "name": "Oskars",
+        "email": "oskars9988@bezkomisijas.lv",
+        "purchase_history": [
+            {
+                "product": "Monitors",
+                "quantity": 2
+            },
+            {
+                "product": "Dators",
+                "quantity": 1
+            },
+            {
+                "product": "Tastatūra",
+                "quantity": 1
+            },
+            {
+                "product": "Pele",
+                "quantity": 1
+            }
+        ]
+    }
+]

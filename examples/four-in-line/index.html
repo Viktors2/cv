@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four in line</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h2>Four in line game</h2>
+      <div class="game_board"></div>
+
+      <button class="reset">Reset</button>
+      <div class="center">
+        <h2>Winner history:</h2>
+        <div class="history"><span class="winner_list"> </span></div>
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="text_card">
+        <h3 class="message"></h3>
+        <button class="reset_game">Reset</button>
+      </div>
+    </div><m>
+    <template id="template_cell"><div class="cell"></div></template>
+    <script src="Storage.js"></script>
+
+    <script src="Referee.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
