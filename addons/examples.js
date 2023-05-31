@@ -7,3 +7,6 @@ function fourInLine() {
   function fetchData() {
     window.open("./examples/fetch-data/index.html", "_blank");
   }
+  function flappy() {
+    window.open("./examples/flappy-bird/flappy.html", "_blank");
+  }
