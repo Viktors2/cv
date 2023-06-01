@@ -49,7 +49,7 @@ let modalContent = document.querySelector(".popup-content");
     const imageWidth = slider.offsetWidth;
     let currentIndex = 0;
 
-    // Set initial position of the slider
+    //position of the slider
     sliderContainer.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
 
     function nextSlide() {
@@ -60,11 +60,11 @@ let modalContent = document.querySelector(".popup-content");
       sliderContainer.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
     }
 
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    setInterval(nextSlide, 7000); // Change slide every 7 seconds
 
-    // Lightbox functionality
+    //lightbox
     const lightbox = document.querySelector('.lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxImage = document.querySelector('.lightbox-image');
 
     function openLightbox(imageUrl) {
       lightboxImage.src = imageUrl;
