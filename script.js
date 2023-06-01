@@ -1,3 +1,5 @@
+//navigation
+{
 const arrow = document.querySelector(".down");
 const resume = document.querySelector(".button-t");
 const navLinks = document.querySelectorAll(".nav-links a");
@@ -16,9 +18,10 @@ navLinks.forEach((link, index) => {
 arrow.addEventListener("click", function () {
   elements[1].scrollIntoView({ behavior: "smooth" });
 });
-
+}
 ///popup
-let modalContent = document.querySelector(".popup-content");
+{
+  let modalContent = document.querySelector(".popup-content");
     let openModal = document.querySelector(".button-f");
     let closeModal = document.querySelector(".close-popup");
 
@@ -41,7 +44,8 @@ let modalContent = document.querySelector(".popup-content");
         closeModalFunction();
       }
     });
-
+}
+{
     ///slider   
     const slider = document.querySelector('.slider');
     const sliderContainer = document.querySelector('.slider-container');
@@ -61,8 +65,9 @@ let modalContent = document.querySelector(".popup-content");
     }
 
     setInterval(nextSlide, 7000); // Change slide every 7 seconds
-
-    //lightbox
+}
+//lightbox
+{
     const lightbox = document.querySelector('.lightbox');
     const lightboxImage = document.querySelector('.lightbox-image');
 
@@ -74,3 +79,4 @@ let modalContent = document.querySelector(".popup-content");
     lightbox.addEventListener('click', function() {
       lightbox.classList.remove('active');
     });
+}
