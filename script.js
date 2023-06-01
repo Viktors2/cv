@@ -41,3 +41,36 @@ let modalContent = document.querySelector(".popup-content");
         closeModalFunction();
       }
     });
+
+    ///slider   
+    const slider = document.querySelector('.slider');
+    const sliderContainer = document.querySelector('.slider-container');
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const imageWidth = slider.offsetWidth;
+    let currentIndex = 0;
+
+    // Set initial position of the slider
+    sliderContainer.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+
+    function nextSlide() {
+      currentIndex++;
+      if (currentIndex >= sliderItems.length) {
+        currentIndex = 0;
+      }
+      sliderContainer.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+    }
+
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+    // Lightbox functionality
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+
+    function openLightbox(imageUrl) {
+      lightboxImage.src = imageUrl;
+      lightbox.classList.add('active');
+    }
+
+    lightbox.addEventListener('click', function() {
+      lightbox.classList.remove('active');
+    });
