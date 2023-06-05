@@ -1,10 +1,10 @@
 //navigation
 {
-const arrow = document.querySelector(".down");
-const resume = document.querySelector(".button-t");
-const navLinks = document.querySelectorAll(".nav-links a");
-const elements = document.querySelectorAll(".c");
-const main = document.querySelector(".con");
+const arrow = document.querySelector(".down"),
+      resume = document.querySelector(".button-t"),
+      navLinks = document.querySelectorAll(".nav-links a"),
+      elements = document.querySelectorAll(".c"),
+      main = document.querySelector(".con");
 
 resume.addEventListener("click", function () {
   main.scrollIntoView({ behavior: "smooth" });
@@ -21,11 +21,11 @@ arrow.addEventListener("click", function () {
 }
 ///popup
 {
-  let modalContent = document.querySelector(".popup-content");
-    let openModal = document.querySelector(".button-f");
-    let closeModal = document.querySelector(".close-popup");
+  let modalContent = document.querySelector(".popup-content"),
+      openModal = document.querySelector(".button-f"),
+      closeModal = document.querySelector(".close-popup");
 
-    let closeModalFunction = function () {
+    function closeModalFunction() {
       modalContent.style.opacity = 0;
       setTimeout(function() {
         modalContent.classList.add("hidden-popup");
@@ -47,10 +47,10 @@ arrow.addEventListener("click", function () {
 }
     ///slider   
 {
-    const slider = document.querySelector('.slider');
-    const sliderContainer = document.querySelector('.slider-container');
-    const sliderItems = document.querySelectorAll('.slider-item');
-    const imageWidth = slider.offsetWidth;
+    const slider = document.querySelector('.slider'),
+          sliderContainer = document.querySelector('.slider-container'),
+          sliderItems = document.querySelectorAll('.slider-item'),
+          imageWidth = slider.offsetWidth;
     let currentIndex = 0;
 
     //position of the slider
@@ -63,13 +63,12 @@ arrow.addEventListener("click", function () {
       }
       sliderContainer.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
     }
-
     setInterval(nextSlide, 7000); // Change slide every 7 seconds
 }
 //lightbox
 {
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImage = document.querySelector('.lightbox-image');
+    const lightbox = document.querySelector('.lightbox'),
+          lightboxImage = document.querySelector('.lightbox-image');
 
     function openLightbox(imageUrl) {
       lightboxImage.src = imageUrl;
