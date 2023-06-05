@@ -1,15 +1,14 @@
 import { apiKey, apiDomain } from './keys.js';
-
-
+///variables
 const form = document.querySelector('.c-form'),
-        nameInput = document.querySelector('.c-name'),
-        emailInput = document.querySelector('.c-email'),
-        phoneInput = document.querySelector('.c-phone'),
-        messageInput = document.querySelector('.text'),
-        timeInput = document.querySelector('.c-time'),
-        sendButton = document.querySelector('.send-email');
-  
-  
+      nameInput = document.querySelector('.c-name'),
+      emailInput = document.querySelector('.c-email'),
+      phoneInput = document.querySelector('.c-phone'),
+      messageInput = document.querySelector('.text'),
+      timeInput = document.querySelector('.c-time'),
+      sended = document.querySelector('.sended'),
+      sendButton = document.querySelector('.send-email');
+
 sendButton.addEventListener('click', sendEmail);
 
 // To send the email
@@ -24,12 +23,11 @@ function sendEmail(event) {
         message = messageInput.value;
 
   // Construct the email data
-  const data = {
-    from: email,
-    to: 'vitjok22@gmail.com',
-    subject: 'Contact Form',
-    text: `Name: ${name}\nEmail: ${email}\nTime: ${time}\nPhone: ${phone}\nMessage: ${message}`
-  };
+  const formData = new FormData();
+  formData.append('from', email);
+  formData.append('to', 'vitjok22@gmail.com');
+  formData.append('subject', 'Contact Form');
+  formData.append('text', `Name: ${name}\nEmail: ${email}\nTime: ${time}\nPhone: ${phone}\nMessage: ${message}`);
 
   // Mailgun API
   fetch(apiDomain, {
@@ -37,18 +35,18 @@ function sendEmail(event) {
     headers: {
       'Authorization': `Basic ${btoa(`api:${apiKey}`)}`,
     },
-    body: new URLSearchParams(data)
+    body: formData
   })
     .then(response => {
       if (response.ok) {
-        console.log('Sended!');
-        // Reset the form after successful submission
+        console.log('Sent!');
+        sended.classList.remove('hidden');
+        setTimeout(() => {
+          sended.classList.add('hidden');
+        }, 8000);
         form.reset();
       } else {
-        console.log('Error blat.');
+        console.log('Error.');
       }
-    })
-    .catch(error => {
-      console.log('Slomalos(:', error);
     });
 }

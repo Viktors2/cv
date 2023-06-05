@@ -45,8 +45,8 @@ arrow.addEventListener("click", function () {
       }
     });
 }
-{
     ///slider   
+{
     const slider = document.querySelector('.slider');
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItems = document.querySelectorAll('.slider-item');
