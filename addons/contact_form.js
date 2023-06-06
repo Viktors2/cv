@@ -1,4 +1,4 @@
-import { apiKey, apiDomain } from './keys.js';
+import { apiKey, apiDomain, mainMail } from './keys.js';
 ///variables
 const form = document.querySelector('.c-form'),
       nameInput = document.querySelector('.c-name'),
@@ -25,7 +25,7 @@ function sendEmail(event) {
   // Construct the email data
   const formData = new FormData();
   formData.append('from', email);
-  formData.append('to', 'vitjok22@gmail.com');
+  formData.append('to', mainMail);
   formData.append('subject', 'Contact Form');
   formData.append('text', `Name: ${name}\nEmail: ${email}\nTime: ${time}\nPhone: ${phone}\nMessage: ${message}`);
 
