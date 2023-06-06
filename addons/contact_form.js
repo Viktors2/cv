@@ -1,55 +1,72 @@
-import { apiKey, apiDomain, mainMail } from './keys.js';
-///variables
-const form = document.querySelector('.c-form'),
-      nameInput = document.querySelector('.c-name'),
-      emailInput = document.querySelector('.c-email'),
-      phoneInput = document.querySelector('.c-phone'),
-      messageInput = document.querySelector('.text'),
-      timeInput = document.querySelector('.c-time'),
-      sended = document.querySelector('.sended'),
-      sendButton = document.querySelector('.send-email');
+import { apiKey, mainMail } from './keys.js';
 
-sendButton.addEventListener('click', sendEmail, userMessage);
+const send_form = document.querySelector('.send-email');
+const userName = document.querySelector('.c-name');
+const userEmail = document.querySelector('.c-email');
+const userMessage = document.querySelector('.text');
+const phone = document.querySelector('.c-phone');
+const time = document.querySelector('.c-time');
 
-// To send the email
-function sendEmail(event) {
-  event.preventDefault(); // Prevent form submission
+const formData = new FormData();
+const userFormData = new FormData();
 
-  // Get values
-  const name = nameInput.value,
-        email = emailInput.value,
-        phone = phoneInput.value,
-        time = timeInput.value,
-        message = messageInput.value;
+let newData = '';
+let userNewData = '';
 
-  // Construct the email data
-  const formData = new FormData();
-  formData.append('from', email);
-  formData.append('to', mainMail);
-  formData.append('subject', 'Contact Form');
-  formData.append('text', `Name: ${name}\nEmail: ${email}\nTime: ${time}\nPhone: ${phone}\nMessage: ${message}`);
+send_form.addEventListener("click", mailToDev);
 
-  // Mailgun API
-  fetch(apiDomain, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Basic ${btoa(`api:${apiKey}`)}`,
-    },
-    body: formData
-  })
-    .then(response => {
-      if (response.ok) {
-        console.log('Sent!');
-        sended.classList.remove('hidden');
-        setTimeout(() => {
-          sended.classList.add('hidden');
-        }, 8000);
-        form.reset();
-      } else {
-        console.log('Error.');
-      }
-    });
+function mailToDev(e) {
+  e.preventDefault();
+
+  formData.append('Name', userName.value);
+  formData.append('Email', userEmail.value);
+  formData.append('Phone', phone.value);
+  formData.append('Time', time.value);
+  formData.append('Message', userMessage.value);
+
+  for (const [key, value] of formData.entries()) {
+    newData += `<b>${key}:</b> ${value}<br>`;
+  }
+
+  formSending();
+  mailToUser();
 }
-function userMessage() {
-  
+
+function mailToUser() {
+  userFormData.append('Dear', userName.value + '!');
+  userFormData.append('Message', 'Thank you for your message! We will get back to you soon.');
+
+  for (const [key, value] of userFormData.entries()) {
+    userNewData += `<b>${key}:</b> ${value}<br>`;
+  }
+
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: mainMail,
+    Password: apiKey,
+    To: userEmail.value,
+    From: mainMail,
+    Subject: "Confirmation Email",
+    Body: userNewData
+  }).then(() => {
+    console.log("Confirmation email sent to the user");
+  }).catch((error) => {
+    console.log("Error sending confirmation email:", error);
+  });
+}
+
+function formSending() {
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: mainMail,
+    Password: apiKey,
+    To: mainMail,
+    From: mainMail,
+    Subject: "Contact form",
+    Body: newData
+  }).then(() => {
+    console.log("Email sent successfully");
+  }).catch((error) => {
+    console.log("Error sending email:", error);
+  });
 }

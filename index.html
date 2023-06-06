@@ -300,7 +300,7 @@
             
                     <div class="popup-body">
                         <div class="contact-us center">
-                            <form class="c-form" action="#">
+                            <form class="c-form">
                               <label>Your name:</label>
                               <input class="c-name" required="" type="text" />
                               <label>email:</label>
@@ -317,7 +317,7 @@
                               <textarea class="text" required="" rows="4"></textarea>
                                 <div class="center">
                                 <div class="sended hidden">Message sent!</div>
-                                <button class="send-email" type="submit">Send</button>
+                                <button class="send-email">Send</button>
                                 </div>
                               <script type="module" src="./addons/contact_form.js"></script>
                             </form>
@@ -369,10 +369,11 @@
 </footer>  
 <script src="./addons/examples.js"></script>
 <script src="./script.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
 <script src="./addons/ApiManager.js"></script>
 <script src="./addons/ListEntryManager.js"></script>
     <script>
-        
       const api = new ApiManager('reviews');
       const entry_manager = new ListEntryManager(
         {
