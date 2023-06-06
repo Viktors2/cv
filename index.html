@@ -333,24 +333,26 @@
             <img src="./img/line.svg" alt="">
         </div>
         <div class="content">
-                      <form class="form_list_entries">
-                        <div class="reviews">
-                          <template class="tamplate_list_entry">
-                            <div class="review">
-                              <div class="r-title">
-                                <img
-                                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80"/>
-                                <pre class="place_comment">This is example</pre>
-                                </div>
-                              
-                            </div>
-                          </template>
+            <form class="form_list_entries">
+                <div class="reviews">
+                    <template class="tamplate_list_entry">
+                        <div class="review">
+                          <div class="r-title">
+                            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80" />
+                            <div class="place_name">Name</div>
+                            <div class="place_email">Test@email</div>
                         </div>
-                          <textarea class="reviews-textarea" name="comment" placeholder="Type Your Review" required></textarea>
-                        <div class="reviews-end">
-                          <input type="submit" value="Post review"/>
+                            <pre class="place_comment">This is example</pre>
                         </div>
-                      </form>
+                      </template>                      
+                </div>
+                <input class="r-input" type="text" name="name" placeholder="Your Name" required />
+                <input class="r-input" type="email" name="email" placeholder="Your Email" required />
+                <textarea class="reviews-textarea" name="comment" placeholder="Type Your Review" required></textarea>
+                <div class="reviews-end">
+                  <input type="submit" value="Post review" />
+                </div>
+              </form>
                    
             <div class="social write">
                 <a href="https://github.com/Viktors2"><img src="./img/github.svg" alt="github" class="fill"></a>

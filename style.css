@@ -495,6 +495,9 @@ textarea{
   align-items: center;
   justify-content: flex-start;
 }
+.r-title .place_name {
+  margin: 10px;
+}
 .reviews-end {
   display: flex;
   justify-content: flex-end;
@@ -509,6 +512,17 @@ textarea{
   box-shadow: none;
   border-radius: 10px;
 
+}
+.r-input{
+  margin: 10px 0px 10px 0px;
+  width: 250px;
+  height: 27px;
+  background-color: #333333;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  border-radius: 10px;
+  color: #ffffff;
 }
 .reviews-end input {
   width: 90px;
