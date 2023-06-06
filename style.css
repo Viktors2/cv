@@ -468,3 +468,55 @@ textarea{
 .lightbox.active {
   display: flex;
 }
+
+/* reviews */
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  background-color: #1F1F1F;
+  border-radius: 10px;
+  width: 500px;
+  height: fit-content;
+  margin-bottom: 20px;
+}
+.r-title img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.r-title {
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.reviews-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.reviews-textarea {
+  height: 120px;
+  width: 517px;
+  background-color: #333333;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  border-radius: 10px;
+
+}
+.reviews-end input {
+  width: 90px;
+  height: 43px;
+  background-color: #E65F78;
+  border-radius: 5px;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 12px;
+  margin-top: 20px;
+}

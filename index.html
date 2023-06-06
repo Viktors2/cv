@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <link rel="stylesheet" href="./style.css">
-</head><header>
+</head>
+<header>
     <div class="navmenu">
         <img src="./img/logo.svg" alt="logo" class="logo">
     <nav>
         <ul class="nav-links">
             <li><a class="a">about</a></li>
+            <li><a class="a">hobbies</a></li>
             <li><a class="e" >experience</a></li>
             <li><a class="s" >skill</a></li>
             <li><a class="p" >portfolio</a></li>
@@ -20,10 +22,8 @@
     </nav>
     <a><button class="button-t">Resume</button></a>
     </div>
-    
 </header>
 <body>
-
     <div class="con main">
             <div class="p-img">
                 <img src="./img/p-image.svg" alt="picture">
@@ -325,6 +325,33 @@
                     </div>
                 </div> 
             </div>
+        </div>       
+    </div>
+    <div class="black-80 c">
+        <div class="header">
+            <h1 class="title">Reviews</h1>
+            <img src="./img/line.svg" alt="">
+        </div>
+        <div class="content">
+                      <form class="form_list_entries">
+                        <div class="reviews">
+                          <template class="tamplate_list_entry">
+                            <div class="review">
+                              <div class="r-title">
+                                <img
+                                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80"/>
+                                <pre class="place_comment">This is example</pre>
+                                </div>
+                              
+                            </div>
+                          </template>
+                        </div>
+                          <textarea class="reviews-textarea" name="comment" placeholder="Type Your Review" required></textarea>
+                        <div class="reviews-end">
+                          <input type="submit" value="Post review"/>
+                        </div>
+                      </form>
+                   
             <div class="social write">
                 <a href="https://github.com/Viktors2"><img src="./img/github.svg" alt="github" class="fill"></a>
                 <a href="https://www.linkedin.com/in/viktors-navlevs-512492274/"><img src="./img/linkedin.svg" alt="linkedin" class="fill"></a>
@@ -332,15 +359,34 @@
                 <a href="#"><img src="./img/twitter.svg" alt="twitter" class="fill"></a>
             </div>
         </div>
-        
     </div>
-    <footer>
-        <div class="footer">
-            <img src="./img/footer.svg" alt="footer">
-        </div>
-    </footer>
-    
+<footer>
+    <div class="footer">
+        <img src="./img/footer.svg" alt="footer">
+    </div>
+</footer>  
 <script src="./addons/examples.js"></script>
 <script src="./script.js"></script>
+<script src="./addons/ApiManager.js"></script>
+<script src="./addons/ListEntryManager.js"></script>
+    <script>
+        
+      const api = new ApiManager('reviews');
+      const entry_manager = new ListEntryManager(
+        {
+          beforeCreateHook: function (form_data) {
+            api.postRequest(form_data, function (result) {
+            });
+          }
+        }
+      );
+
+      api.getRequest(function (entries) {
+        for (const id in entries) {
+          entry_manager.addListElement(entries[id], id);
+        }
+      });
+
+    </script>
 </body>
 </html>

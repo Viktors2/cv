@@ -9,7 +9,7 @@ const form = document.querySelector('.c-form'),
       sended = document.querySelector('.sended'),
       sendButton = document.querySelector('.send-email');
 
-sendButton.addEventListener('click', sendEmail);
+sendButton.addEventListener('click', sendEmail, userMessage);
 
 // To send the email
 function sendEmail(event) {
@@ -49,4 +49,7 @@ function sendEmail(event) {
         console.log('Error.');
       }
     });
+}
+function userMessage() {
+  
 }
