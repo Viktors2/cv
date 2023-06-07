@@ -534,7 +534,7 @@ textarea{
   margin-top: 20px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 800px) {
 
   body {
   min-width: 550px;
@@ -542,6 +542,7 @@ textarea{
   }
 
   .c{
+    margin: 10px;
     padding-top: 100px;
   }
   .content{
@@ -564,12 +565,13 @@ textarea{
   display: none;
 }
   .header {
+    width: auto;
     padding-top: 60px;
     padding-bottom: 60px;
   }
 
   .navmenu {
-    padding: 0px 20px;
+    padding: 0px 0px;
   }
   .button-t{
     display: none;
@@ -602,7 +604,7 @@ display: none;
   .exp,
   .exam,
   .skill {
-    max-width: 250px;
+    max-width: 350px;
     margin: 20px 0px;
   }
   .popup-content {
