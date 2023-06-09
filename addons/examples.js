@@ -10,3 +10,6 @@ function fourInLine() {
   function flappy() {
     window.open("./examples/flappy-bird/flappy.html", "_blank");
   }
+  function memory() {
+    window.open("./examples/memory/index.html", "_blank");
+  }
