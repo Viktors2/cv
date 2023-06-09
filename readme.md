@@ -1,5 +1,5 @@
 
-# CV simple web project.
+# CV web project.
 
 CV web page for RigaCodingSchool final project.
 
